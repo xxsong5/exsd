@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/krolaw/xsd"
+    "github.com/xxsong5/exsd"
     "fmt"
     "os"
 )
@@ -66,7 +66,7 @@ func main()  {
 
 
     //load xsd file
-    xsdSchema, err := xsd.ParseSchemaFile(os.Args[2])
+    xsdSchema, err := exsd.ParseSchemaFile(os.Args[2])
     if err != nil {
         fmt.Fprintf(os.Stderr, "%s\n", err.Error())
         os.Exit(1)

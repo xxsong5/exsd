@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/krolaw/xsd"
+    "github.com/xxsong5/exsd"
     "github.com/jbussdieker/golibxml"
     "fmt"
     "os"
@@ -81,10 +81,10 @@ func main()  {
     }
     defer xsdfile.Close()
     xsdb = xsdb[0:n:n]
-    xsdSchema, err := xsd.ParseSchema(xsdb) */
+    xsdSchema, err := exsd.ParseSchema(xsdb) */
 
     //method two 
-    xsdSchema, err := xsd.ParseSchemaFile(os.Args[2])
+    xsdSchema, err := exsd.ParseSchemaFile(os.Args[2])
 
     if err != nil {
         fmt.Fprintf(os.Stderr, "%s\n", err.Error())
@@ -116,14 +116,14 @@ func main()  {
             }else {
                 defer doc.Free()
                 /* method one
-                if err := xsdSchema.Validate(xsd.DocPtr(unsafe.Pointer(doc.Ptr))); err != nil {
+                if err := xsdSchema.Validate(exsd.DocPtr(unsafe.Pointer(doc.Ptr))); err != nil {
                     fmt.Println(f, ":\n", err)
                 }else {
                     fmt.Println(f, ":\n matched!\n", )
                 }*/
 
                 // method two
-                if err := xsdSchema.ValidateS(xsd.DocPtr(unsafe.Pointer(doc.Ptr))); err != nil {
+                if err := xsdSchema.ValidateS(exsd.DocPtr(unsafe.Pointer(doc.Ptr))); err != nil {
                     fmt.Println(f, ":\n", err)
                 }else {
                     fmt.Println(f, ":\n matched!\n", )

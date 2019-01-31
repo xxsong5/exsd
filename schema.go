@@ -1,4 +1,4 @@
-package xsd
+package exsd
 
 /*
 #cgo pkg-config: libxml-2.0
