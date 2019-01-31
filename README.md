@@ -1,6 +1,6 @@
 # eXSD - extended XML Schema Validator 
 
-eXSD is a Go wrapper for the C libxml2 library and it is extended from github.com/krolaw/xsd, which is easier to use
+eXSD is a Go wrapper for the C libxml2 library and it is extended from github.com/krolaw/xsd, which is easier and more powerfull to use
 
 ## Quick Start
 
