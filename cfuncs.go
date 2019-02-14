@@ -32,7 +32,12 @@ void xmlSErrorFunc_cgo(void *ctx, void *Serror)
     char nodeInfo[512][512];
     int idx = 0;
     while(node && node->parent) {
-        idx != 0 ? sprintf(nodeInfo[idx++], "%s", node->name): sprintf(nodeInfo[idx++], "%s (line:%d, errorCode:%d)", node->name, node->line, SerrorPtr->code);
+        int id = 0;
+
+        xmlNodePtr n = node;
+        while(n->prev != NULL) { if (strcmp(n->prev->name, node->name) == 0){ ++id;} n = n->prev;}
+
+        idx != 0 ? sprintf(nodeInfo[idx++], "%s[%d]", node->name, id): sprintf(nodeInfo[idx++], "%s[%d] (line:%d, errorCode:%d)", node->name, id, node->line, SerrorPtr->code);
         node = node->parent;
     }
 
